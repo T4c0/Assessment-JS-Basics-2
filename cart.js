@@ -7,7 +7,6 @@
     creating customer objects.  
 */
 
-
 //////////////////PROBLEM 1////////////////////
 /*  
     Below is a cart array that has food objects
@@ -19,24 +18,24 @@
 */
 
 const cart = [
-    {
-        name: 'pizza', 
-        price: 9.99
-    }, 
-    {
-        name: 'pasta', 
-        price: 8.99
-    }, 
-    {
-        name: 'salad', 
-        price: 7.99
-    }
-]
+  {
+    name: "pizza",
+    price: 9.99,
+  },
+  {
+    name: "pasta",
+    price: 8.99,
+  },
+  {
+    name: "salad",
+    price: 7.99,
+  },
+];
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce((acc, curr) => acc + curr.price, 0);
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -55,7 +54,14 @@ const cart = [
 
 //CODE HERE
 
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+  const taxAmount = cartTotal * tax;
+  const finalPrice = cartTotal + taxAmount - couponValue;
 
+  return finalPrice;
+};
+
+console.log(calcFinalPrice(100, 10, 0.06));
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -79,6 +85,14 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
+    name: "John Doe"                    This property should store the customer's full name. It should be of data type string because names are typically represented as text.
+    email: "john.doe@example.com"       To contact the customer and send order confirmations or updates, the email address should be stored. This property should be of data type string and follow the email format. 
+    streetAddress: "123 Main Street",   To deliver the order, the customer's delivery address, including street address, city, state, and postal code, should be included. These can be stored as separate properties, each of data type string.
+    city: "Cityville",
+    state: "State",
+    postalCode: "12345"
+
+
 
 */
 
@@ -88,3 +102,14 @@ const cart = [
 */
 
 //CODE HERE
+
+const customer = {
+    name: "John Doe",
+    email: "john.doe@example.com",
+    streetAddress: "123 Main Street",
+    city: "Cityville",
+    state: "State",
+    postalCode: "12345",
+}
+
+console.log(customer)
